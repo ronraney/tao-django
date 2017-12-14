@@ -1,3 +1,99 @@
 from django.db import models
+from django.utils import timezone
+from django.urls import reverse #Used to generate URLs by reversing the URL patterns
 
 # Create your models here.
+class Post(models.Model):
+# Native fields  
+    post_id = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=100)
+    verse_title = models.CharField(max_length=100)
+    verse = models.TextField()
+    commentary_title = models.CharField(max_length=200)
+    commentary = models.TextField()
+    created_date = models.DateTimeField(default=timezone.now)
+    published_date = models.DateTimeField(blank=True, null=True)
+# Relationships to other models
+    source_author = models.ForeignKey('Writer', on_delete=models.SET_NULL, null=True)
+    source_translator = models.ForeignKey('Translator', on_delete=models.SET_NULL, null=True)
+    source = models.ForeignKey('Book', on_delete=models.SET_NULL, null=True)
+    author = models.ForeignKey('auth.User', on_delete=models.SET_NULL, null=True)
+ 
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.title 
+        
+class Writer(models.Model):
+    """
+    Model representing an author.
+    """
+    writer_id = models.AutoField(primary_key=True)
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    date_of_birth = models.DateField(null=True, blank=True)
+    date_of_death = models.DateField('Died', null=True, blank=True)
+    profile = models.TextField()
+
+    def get_absolute_url(self):
+        """
+        Returns the url to access a particular author instance.
+        """
+        return reverse('writer-detail', args=[str(self.id)])
+    
+
+    def __str__(self):
+        """
+        String for representing the Model object.
+        """
+        return '%s, %s' % (self.last_name, self.first_name)
+
+class Translator(models.Model):
+    """
+    Model representing a translator.
+    """
+    translator_id = models.AutoField(primary_key=True)
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    date_of_birth = models.DateField(null=True, blank=True)
+    date_of_death = models.DateField('Died', null=True, blank=True)
+    profile = models.TextField()
+
+    def get_absolute_url(self):
+        """
+        Returns the url to access a particular author instance.
+        """
+        return reverse('translator-detail', args=[str(self.id)])
+    
+
+    def __str__(self):
+        """
+        String for representing the Model object.
+        """
+        return '%s, %s' % (self.last_name, self.first_name)
+        
+class Book(models.Model):
+    """
+    Model representing a book.
+    """
+    book_id = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=200)
+    author = models.ForeignKey('Writer', on_delete=models.SET_NULL, null=True)
+    summary = models.TextField(max_length=1000, help_text="Enter a brief description of the book")
+    book_url = models.URLField
+        
+        
+    def __str__(self):
+        """
+        String for representing the Model object.
+        """
+        return self.title
+    
+    
+    def get_absolute_url(self):
+        """
+        Returns the url to access a particular book instance.
+        """
+        return reverse('book-detail', args=[str(self.id)])
