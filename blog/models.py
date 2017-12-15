@@ -14,8 +14,8 @@ class Post(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 # Relationships to other models
-    source_author = models.ForeignKey('Writer', on_delete=models.SET_NULL, null=True)
-    source_translator = models.ForeignKey('Translator', on_delete=models.SET_NULL, null=True)
+    source_authors = models.ManyToManyField('Writer', null=True)
+    source_translators = models.ManyToManyField('Translator', null=True)
     source = models.ForeignKey('Book', on_delete=models.SET_NULL, null=True)
     author = models.ForeignKey('auth.User', on_delete=models.SET_NULL, null=True)
  
@@ -33,8 +33,8 @@ class Writer(models.Model):
     writer_id = models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
-    date_of_birth = models.DateField(null=True, blank=True)
-    date_of_death = models.DateField('Died', null=True, blank=True)
+    year_of_birth = models.IntegerField(null=True, blank=True)
+    year_of_death = models.IntegerField(null=True, blank=True)
     profile = models.TextField()
 
     def get_absolute_url(self):
@@ -57,8 +57,8 @@ class Translator(models.Model):
     translator_id = models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
-    date_of_birth = models.DateField(null=True, blank=True)
-    date_of_death = models.DateField('Died', null=True, blank=True)
+    year_of_birth = models.IntegerField(null=True, blank=True)
+    year_of_death = models.IntegerField(null=True, blank=True)
     profile = models.TextField()
 
     def get_absolute_url(self):
@@ -81,8 +81,11 @@ class Book(models.Model):
     book_id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=200)
     author = models.ForeignKey('Writer', on_delete=models.SET_NULL, null=True)
+    first_edition = models.IntegerField(null=True, blank=True)
+    translator_note = models.CharField(max_length=200, null=True, blank=True)
+    translators = models.ManyToManyField('Translator')
     summary = models.TextField(max_length=1000, help_text="Enter a brief description of the book")
-    book_url = models.URLField
+    book_url = models.URLField(null=True, blank=True)
         
         
     def __str__(self):

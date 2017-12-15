@@ -15,8 +15,8 @@
                 <h2>{{ post.verse_title }}</h2>
                 <p>{{ post.verse }}</p><hr>
                 <p>Source:{{ post.source }}</p>
-                <p>Author:{{ post.source_author }}</p>
-                <p>Translator(if applicable): {{ post.source_translator }}</p>
+                <p>Authors:{{ post.source_authors }}</p>
+                <p>Translators(if applicable): {{ post.source_translators }}</p>
             </div>
             <div class="container-fluid post_commentary">
                 <h2>{{ post.commentary_title }}</h2>
@@ -29,18 +29,3 @@
     {% endfor %}
 {% endblock %}
 
-<!--
-    post_id = AutoField()
-    title = models.CharField(max_lenth=100)
-    verse_title = models.CharField(max_lenth=100)
-    verse = models.TextField()
-    commentary_title = models.CharField(max_length=200)
-    commentary = models.TextField()
-    created_date = models.DateTimeField(default=timezone.now)
-    published_date = models.DateTimeField(blank=True, null=True)
-# Relationships to other models
-    source_author = models.ForeignKey('Writer', on_delete=models.SET_NULL, null=True)
-    source_translator = models.ForeignKey('Writer', on_delete=models.SET_NULL, null=True)
-    source = models.ForeignKey('Book', on_delete=models.SET_NULL, null=True)
-    author = models.ForeignKey('auth.User', on_delete=models.SET_NULL, null=True)
--->

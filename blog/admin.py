@@ -6,20 +6,21 @@ from .models import Post, Writer, Translator, Book
 #Define BookAdmin class
 
 class BookAdmin(admin.ModelAdmin):
-    list_display = ('title', 'author', 'summary', 'book_url')
+    list_display = ('title', 'author', 'translator_note')
+    fields = ['title', 'author', 'first_edition', 'translator_note', 'translators', 'summary', 'book_url']
     
 @admin.register(Writer)
 #Define WriterAdmin class
 
 class WriterAdmin(admin.ModelAdmin):
-    list_display = ('last_name', 'first_name', 'date_of_birth', 'date_of_death', 'profile')
-    fields = ['first_name', 'last_name', ('date_of_birth', 'date_of_death')]
+    list_display = ('last_name', 'first_name', 'year_of_birth', 'year_of_death', 'profile')
+    fields = ['first_name', 'last_name', ('year_of_birth', 'year_of_death')]
 
 @admin.register(Translator)
 # Define the Translator class
 class TranslatorAdmin(admin.ModelAdmin):
-    list_display = ('last_name', 'first_name', 'date_of_birth', 'date_of_death', 'profile')
-    fields = ['first_name', 'last_name', ('date_of_birth', 'date_of_death')] 
+    list_display = ('last_name', 'first_name', 'year_of_birth', 'year_of_death', 'profile')
+    fields = ['first_name', 'last_name', ('year_of_birth', 'year_of_death')] 
     
 @admin.register(Post)
 #  Define the Post class
@@ -27,10 +28,10 @@ class TranslatorAdmin(admin.ModelAdmin):
 class PostAdmin(admin.ModelAdmin):
     fieldsets = (
         ('Post Info', {
-            'fields': ('title', 'author')
+            'fields': ('title', 'author', 'created_date', 'published_date')
         }),
         ('Verse Section', {
-            'fields': ('verse_title', 'verse', 'source', 'source_author', 'source_translator')
+            'fields': ('verse_title', 'verse', 'source', 'source_authors', 'source_translators')
         }),
         ('Commentary Section', {
             'fields': ('commentary_title', 'commentary'),

@@ -1,40 +1,40 @@
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
-from django.utils import timezone
+from django.shortcuts import render
+from django.views.generic import ListView, DetailView
 
 from .models import Book, Writer, Translator, Post
 
-# Create your views here.
+# Old school index
 def index(request):
     return render(request, 'blog/index.html')
     
-def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'blog/post_list.html', {'posts': posts})
-
-def post_detail(request, pk):
-    post = get_object_or_404(Post, pk=pk)
-    return render(request, 'blog/post_detail.html', {'post': post})
+# Generic Views
     
-from django.views import generic
+class PostListView(ListView):
+    model = Post
+    template_name = 'blog/post_list.html'
 
-class BookListView(generic.ListView):
+class PostDetailView(DetailView):
+    model = Post
+    template_name = 'blog/post_detail.html'
+
+class BookListView(ListView):
     model = Book
     paginate_by = 20
     
-class BookDetailView(generic.DetailView):
+class BookDetailView(DetailView):
     model = Book
     
-class WriterListView(generic.ListView):
+class WriterListView(ListView):
     model = Writer
     paginate_by = 20
     
-class WriterDetailView(generic.DetailView):
+class WriterDetailView(DetailView):
     model = Writer
     
-class TranslatorListView(generic.ListView):
+class TranslatorListView(ListView):
     model = Translator
     paginate_by = 20
     
-class TranslatorDetailView(generic.DetailView):
+class TranslatorDetailView(DetailView):
     model = Translator
+    
