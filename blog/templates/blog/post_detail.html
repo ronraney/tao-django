@@ -3,29 +3,29 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
-    {% for post in posts %}
+
         <div class="container-fluid post">            
             <h1><a href="">{{ post.title }}</a></h1>
-            <div class="container-fluid publish">
-                <p>Post by: {{ post.author }}</p>
-                <p>Created on: {{ post.created_date }}</p>
-                <p>Published on: {{ post.published_date }}</p>
+            <div class="ml-2 publish">
+                <p><span class="font-weight-bold">Posted by:</span> {{ post.author }}</p>
+                <p><span class="font-weight-bold">Published on:</span> {{ post.published_date }}</p>
             </div>
-            <div class="container-fluid post_verse">
-                <h2>{{ post.verse_title }}</h2>
-                <p>{{ post.verse }}</p><hr>
-                <p>Source:{{ post.source }}</p>
-                <p>Authors:{{ post.source_authors }}</p>
-                <p>Translators(if applicable): {{ post.source_translators }}</p>
+            <div class="ml-2 post_verse">
+                <h2>"{{ post.verse_title }}"</h2>
+                <p><span class="font-weight-bold">Source:</span> {{ post.source }}</p>
+                <p>{{ post.verse|linebreaks }}</p><hr>
+                <p><span class="font-weight-bold">Source:</span> {{ post.source }}</p>
+                {% for author in post.source_authors.all %}<p><span class="font-weight-bold">Author:</span> {{ author.first_name }} {{ author.last_name }}</p>{% endfor %}
+                {% for translator in post.source_translators.all %}<p><span class="font-weight-bold">Translation:</span> {{ translator.first_name }} {{ translator.last_name }}</p>{% endfor %}
             </div>
-            <div class="container-fluid post_commentary">
+            <div class="ml-2 post_commentary">
                 <h2>{{ post.commentary_title }}</h2>
-                <p>{{ post.commentary }}</p>
+                <p>{{ post.commentary|linebreaks }}</p>
             </div>
         </div>
-        <p class="lead">
-            <a class="btn btn-primary btn-lg" href="% url 'post-list' %" role="button">Keep Cultivating</a>
+        <p class="mt-5 mx-auto">
+            <a class="btn btn-primary btn-lg" href="{% url 'post_list' %}" role="button">Keep Cultivating</a>
         </p>
-    {% endfor %}
+
 {% endblock %}
 

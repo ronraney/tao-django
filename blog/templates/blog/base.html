@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load static %}
 <html>
     <head>
         <title>
@@ -11,11 +12,12 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="{% static "css/styles.css" %}">
     </head>
     <body>
         <div class="page-header">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <img src="{% static "img/Twitter-logo.png" %}" alt="logo"/>
               <a class="navbar-brand" href="#">Tao Recovery</a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

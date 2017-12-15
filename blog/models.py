@@ -49,7 +49,7 @@ class Writer(models.Model):
         String for representing the Model object.
         """
         return '%s, %s' % (self.last_name, self.first_name)
-
+        
 class Translator(models.Model):
     """
     Model representing a translator.
