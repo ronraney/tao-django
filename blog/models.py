@@ -100,3 +100,31 @@ class Book(models.Model):
         Returns the url to access a particular book instance.
         """
         return reverse('book-detail', args=[str(self.id)])
+        
+#class Card(models.Model):
+    """
+    Model representing a Bootstrap Card
+    """
+    #image_url = models.URLField(null=True, blank=True)
+    #title = models.CharField(max_length=200)
+    #text = models.TextField(max_length=1000)
+    #list_item = models.ManyToManyField('ClassListItem')
+    
+    #def __str__(self):
+    """
+    String for representing the Model object.
+    """
+        #return self.title
+        
+#class ClassListItem(models.Model):
+    """
+    Model representing List Items for the Card class
+    """
+    #item_text = models.CharField()
+    
+    #def __str__(self):
+    """
+    String for representing the Model object.
+    """
+        #return self.title
+    

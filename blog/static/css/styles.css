@@ -27,3 +27,7 @@ a:link, a:hover, a:visited, a:active {
     font-size: 1.5em;
     font-family: 'Spectral SC', serif;
 }
+/***Flatpages***/
+.content {
+    margin: 2em 1em auto 1em;
+}
