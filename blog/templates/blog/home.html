@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %} Tao Recovery {% endblock %}
+
+{% block content %}
+<div class="home-page">
+    <div class="jumbotron">
+        <h1 class="display-3">Welcome to Tao Recovery</h1>
+        <p class="lead">A web space for cultivation of the Tao</p>
+        <hr class="my-4">
+        <p>Is the Tao your Higher Power? All are welcome to explore verses of Tao wisdom and read commentary aimed at inspiration.</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{% url 'post_list' %}" role="button">Start Cultivating</a>
+        </p>
+    </div>
+</div>
+{% endblock %}

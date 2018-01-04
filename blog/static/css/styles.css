@@ -2,7 +2,6 @@
 
 html {
     min-width: 395px;
-    
 }
 /***Tags***/
 
@@ -37,3 +36,25 @@ a:link, a:hover, a:visited, a:active {
 .content {
     margin: 2em 1em auto 1em;
 }
+
+/*Media Queries*/
+
+/*Extra small devices (portrait phones, less than 576px)*/
+@media (max-width: 575.99px) { ... }
+
+/*Small devices (landscape phones, less than 768px)*/
+@media (max-width: 767.99px) { 
+.display-3 {
+    font-size: 3rem;
+  }
+}
+
+/*Medium devices (tablets, less than 992px)*/
+@media (max-width: 991.99px) { ... }
+
+/*Large devices (desktops, less than 1200px)*/
+@media (max-width: 1199.99px) { ... }
+
+/*Extra large devices (large desktops)*/
+// No media query since the extra-large breakpoint has no upper bound on its width
+

@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views import View
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 
@@ -11,6 +12,9 @@ def index(request):
     return render(request, 'blog/index.html')
     
 # Generic Views
+class HomePageView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'blog/home.html')
     
 class PostListView(ListView):
     model = Post
