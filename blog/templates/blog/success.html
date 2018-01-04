@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %} Email Sent {% endblock %}
+
+{% block content %}
+<!-- templates/success.html -->
+<h1>Success! Email sent.</h1>
+<div class="container-fluid"><hr>
+<a href="{% url 'home' %}"><h2>Back To Home Page</h2></a>
+</div>
+{% endblock %}

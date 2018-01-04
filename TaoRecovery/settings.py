@@ -59,7 +59,7 @@ ROOT_URLCONF = 'TaoRecovery.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,4 +124,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
+EMAIL_HOST = 'smtp.webfaction.com'
+EMAIL_HOST_USER = 'ronraney'
+EMAIL_HOST_PASSWORD = 'WildGrove1984!'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True

@@ -24,7 +24,7 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                   <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="ml-3 nav-item">
                         <a class="nav-link disabled" href="{% url 'tao' %}">Tao</a>
@@ -56,6 +56,11 @@
                 {% endblock %}
             </div>
         </div>
+        <footer>
+            <div id="footer" class="bg-dark">
+                <p>Interested in contributing content to this website? <a href="{% url 'contact' %}">Contact Me</a><p>
+            </div>
+        </footer>
         <!--External JavaScript-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
