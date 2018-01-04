@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views import View
+from django.views.generic.base import TemplateView
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 
@@ -10,11 +10,12 @@ from .models import Book, Writer, Translator, Post
 # Old school index
 def index(request):
     return render(request, 'blog/index.html')
+
+class HomePageView(TemplateView):
+    template_name = "blog/home.html"
+    
     
 # Generic Views
-class HomePageView(View):
-    def get(self, request, *args, **kwargs):
-        return render(request, 'blog/home.html')
     
 class PostListView(ListView):
     model = Post
