@@ -1,3 +1,9 @@
+/*Page*/
+
+html {
+    min-width: 395px;
+    
+}
 /***Tags***/
 
 a:link, a:hover, a:visited, a:active {

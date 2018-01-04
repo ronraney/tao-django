@@ -5,7 +5,7 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('posts/$', views.PostListView.as_view(), name='post_list'),
+    path('posts/', views.PostListView.as_view(), name='post_list'),
     path('post/<int:pk>/', views.PostDetailView.as_view(), name='post_detail'),
     path('tao/', flat_views.flatpage, {'url': '/tao/'}, name='tao'),
     path('recovery/', flat_views.flatpage, {'url': '/recovery/'}, name='recovery'),
