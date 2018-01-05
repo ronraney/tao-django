@@ -51,9 +51,7 @@ footer {
     text-align: center;
     padding: 1em;
 }
-.color:link, .color:hover, .color:visited, .color:active {
-    color: red;
-    text-decoration: none;
+.color {
     -webkit-animation: linkchange 20s infinite; /* Chrome, Safari, Opera */
     animation: linkchange 20s infinite;
 }
