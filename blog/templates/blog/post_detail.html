@@ -13,13 +13,13 @@
             <div class="ml-2 post_verse">
                 <h2>{{ post.verse_title }}</h2>
                 <p><span class="font-weight-bold">Source:</span> <a href="">{{ post.source }}</a></p>
-                <p>{{ post.verse|linebreaks|safe }}</p><hr>
+                <p>{{ post.verse|safe }}</p><hr>
                 {% for author in post.source_authors.all %}<p><span class="font-weight-bold">Author:</span> <a href="">{{ author.first_name }} {{ author.last_name }}</a></p>{% endfor %}
                 {% for translator in post.source_translators.all %}<p><span class="font-weight-bold">Translation:</span> <a href="">{{ translator.first_name }} {{ translator.last_name }}</a></p>{% endfor %}
             </div>
             <div class="ml-2 post_commentary">
                 <h2>{{ post.commentary_title }}</h2>
-                <p>{{ post.commentary|linebreaks|safe }}</p>
+                <p>{{ post.commentary|safe }}</p>
             </div>
         </div>
         <p class="mt-5 mx-auto">

@@ -4,7 +4,6 @@ html {
     min-width: 395px;
 }
 
-
 footer {
    position:fixed;
    left:0px;
@@ -15,9 +14,13 @@ footer {
 #footer {
     color: #fff;
     text-align: center;
-    margin: 5px;
+    margin: 5px auto;
     font-size: 1.2em;
 }
+.content {
+    margin: 2em 1em 5em 1em;
+}
+
 
 /* IE 6 */
 * html footer {
@@ -55,10 +58,7 @@ a:link, a:hover, a:visited, a:active {
     font-size: 1.5em;
     font-family: 'Spectral SC', serif;
 }
-/***Flatpages***/
-.content {
-    margin: 2em 1em auto 1em;
-}
+
 
 /*Media Queries*/
 
