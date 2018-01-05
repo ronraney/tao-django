@@ -21,7 +21,9 @@ footer {
     margin: 2em 1em 5em 1em;
 }
 
-
+textarea, input {
+    display: block;
+}
 /* IE 6 */
 * html footer {
    position:absolute;
