@@ -20,7 +20,7 @@ class Post(models.Model):
     source_translators = models.ManyToManyField('Translator', null=True)
     source = models.ForeignKey('Book', on_delete=models.SET_NULL, null=True)
     author = models.ForeignKey('auth.User', on_delete=models.SET_NULL, null=True)
- 
+    
     def publish(self):
         self.published_date = timezone.now()
         self.save()

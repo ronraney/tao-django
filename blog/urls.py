@@ -10,6 +10,7 @@ urlpatterns = [
     path('home/', views.HomePageView.as_view(), name='home'),
     path('posts/', views.PostListView.as_view(), name='post_list'),
     path('post/<int:pk>/', views.PostDetailView.as_view(), name='post_detail'),
+    path('post/random/', views.random_post, name='random_post'),
     path('tao/', flat_views.flatpage, {'url': '/tao/'}, name='tao'),
     path('recovery/', flat_views.flatpage, {'url': '/recovery/'}, name='recovery'),
     path('taorecovery/', flat_views.flatpage, {'url': '/taorecovery/'}, name='taorecovery'),

@@ -4,13 +4,11 @@
 
 {% block content %}
     {% for post in object_list %}
-        <div class="post">
-            
+        <div class="container-fluid post">
             <h1><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h1>
             <div class="publish">
                 <p>Published on: {{ post.published_date }}</p>
-            </div>
-            
+            </div><hr>          
         </div>
     {% endfor %}
 {% endblock %}

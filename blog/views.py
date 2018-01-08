@@ -12,6 +12,16 @@ from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.utils import timezone
 from .models import Book, Writer, Translator, Post
+import random
+from django.template import Context, Template
+
+# Random view
+
+def random_post(request):
+        post_count = Post.objects.all().count()  #Count the objects in Post
+        random_val = random.randint(0, post_count-1)   #Pick a random number between 1 and the post_count - 1
+        post_id = Post.objects.values_list('post_id', flat=True)[random_val]   #Set the post_id equal to random_val
+        return redirect('post_detail', pk=post_id) #Ridirect to post detail
 
 # Old school index
 def index(request):
