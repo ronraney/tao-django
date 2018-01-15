@@ -1,0 +1,15 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %} Latest Posts {% endblock %}
+
+{% block content %}
+{% if latest_post_list %}
+    <ul>    {% for post in latest_post_list %}
+        <h1><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h1>
+    {% endfor %}
+
+{% else %}
+    <p>No posts are available.</p>
+{% endif %}
+
+{% endblock %}
