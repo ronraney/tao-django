@@ -28,7 +28,7 @@ class TranslatorAdmin(admin.ModelAdmin):
 class PostAdmin(admin.ModelAdmin):
     fieldsets = (
         ('Post Info', {
-            'fields': ('title', 'author', 'created_date', 'published_date')
+            'fields': ('title', 'author', 'created_date', 'published_date', 'thumbnail')
         }),
         ('Verse Section', {
             'fields': ('verse_title', 'verse', 'source', 'source_authors', 'source_translators')
