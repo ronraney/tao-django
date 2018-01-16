@@ -21,12 +21,46 @@ html {
 textarea, input {
     display: block;
 }
+/*Header*/
+#logo {
+	background-color: red;
+}
+#logo {
+	-webkit-animation: color 20s infinite; /* Chrome, Safari, Opera */
+    animation: color 20s infinite;
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes color {
+    0%   {background-color: red;}
+    14%  {background-color: orange;}
+    28%  {background-color: yellow;}
+    42%  {background-color: green;}
+    56%  {background-color: blue;}
+    70%  {background-color: indigo;}
+    85%  {background-color: violet;}
+    100% {background-color: red;}
+}
+
+/* Standard syntax */
+@keyframes color {
+    0%   {background-color: red;}
+    14%  {background-color: orange;}
+    28%  {background-color: yellow;}
+    42%  {background-color: green;}
+    56%  {background-color: blue;}
+    70%  {background-color: indigo;}
+    85%  {background-color: violet;}
+    100% {background-color: red;}
+}
 /*Post Detail*/
 .card {
 	margin-top: 25px;
 	max-width: 90%;
 }
-
+.card-image {
+	max-width: 128px;
+	height: auto;
+}
 
 /* IE 6 */
 
