@@ -1,7 +1,9 @@
 from django.urls import path
 from django.contrib import admin
 from django.contrib.flatpages import views as flat_views
-from . import views
+from django.conf.urls.static import static
+from django.conf import settings
+from . import views   
 
 
 urlpatterns = [
@@ -24,4 +26,4 @@ urlpatterns = [
     path('translator/<int:translator_id>/', views.TranslatorDetailView.as_view(), name='translator-detail'),
     path('contact/', views.emailView, name='contact'),
     path('success/', views.successView, name='success'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -129,3 +129,8 @@ EMAIL_HOST_USER = 'ronraney'
 EMAIL_HOST_PASSWORD = 'WildGrove1984!'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'blog\media')
+MEDIA_URL = '/media/'
+
+print(MEDIA_ROOT)

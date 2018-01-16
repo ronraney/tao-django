@@ -15,6 +15,7 @@ class Post(models.Model):
     commentary = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
+    thumbnail = models.ImageField(default='img/default.png', upload_to='img', blank=True, null=True)
 # Relationships to other models
     source_authors = models.ManyToManyField('Writer', null=True)
     source_translators = models.ManyToManyField('Translator', null=True)
