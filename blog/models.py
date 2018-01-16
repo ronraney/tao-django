@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.urls import reverse #Used to generate URLs by reversing the URL patterns
-
+from PIL import Image
 
 # Create your models here.
 
