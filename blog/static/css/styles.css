@@ -29,6 +29,16 @@ textarea, input {
 	-webkit-animation: color 20s infinite; /* Chrome, Safari, Opera */
     animation: color 20s infinite;
 }
+/*Home*/
+
+.sub-lead {
+	margin: 20px auto;
+}
+
+.jumbotron {
+	max-width: 95%;
+	margin-right: 5%;
+}
 /* Chrome, Safari, Opera */
 @-webkit-keyframes color {
     0%   {background-color: red;}
@@ -100,27 +110,32 @@ a:link, a:hover, a:visited, a:active {
 /*Media Queries*/
 
 /*Extra small devices (portrait phones, less than 576px)*/
-@media (max-width: 575.99px) { ... }
+@media (max-width: 575.99px) {  
+	.home-btn {
+		margin-top: 20px;
+		
+	}
+}
 
 /*Small devices (landscape phones, less than 768px)*/
 @media (max-width: 767.99px) { 
-.display-3 {
-    font-size: 3rem;
-  }
-#footer {
-    color: #fff;
-    text-align: center;
-    margin: 3px;
-    font-size: .6em;
-}
+	.display-3 {
+		font-size: 3rem;
+	 }
+	#footer {
+		color: #fff;
+		text-align: center;
+		margin: 3px;
+		font-size: .6em;
+	}
 
 }
 
 /*Medium devices (tablets, less than 992px)*/
-@media (max-width: 991.99px) { ... }
+@media (max-width: 991.99px) {  }
 
 /*Large devices (desktops, less than 1200px)*/
-@media (max-width: 1199.99px) { ... }
+@media (max-width: 1199.99px) {  }
 
 /*Extra large devices (large desktops)*/
 // No media query since the extra-large breakpoint has no upper bound on its width

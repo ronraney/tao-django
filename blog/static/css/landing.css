@@ -230,8 +230,11 @@ h3 {
     #entry {
         font-size: 1.5em;
         top: 65%;
-        margin-left: -95px;
+        margin-left: -80px;
     }
+	#entry a {
+		margin: auto 20px;
+	}
 	footer {
 		font-size: 0.9em;
 	}

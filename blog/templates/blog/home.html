@@ -8,11 +8,11 @@
         <h1 class="display-3">Welcome</h1>
         <p class="lead">A virtual space for cultivation of the Tao. Is the Tao your Higher Power?</p>
         <hr class="my-4">
-        <p>Explore verses of Tao wisdom and read commentary aimed at inspiration.</p>
-        <p class="lead">
-            <a class="btn btn-primary btn-lg" href="{% url 'post_list' %}" role="button">Recent Posts</a>
-            <a class="btn btn-primary btn-lg" href="{% url 'random_post' %}" role="button">Spin the Wheel (Random)</a>
-        </p>
+        <p class="sub-lead">Explore verses of Tao wisdom and read commentary aimed at inspiration.</p>
+        <div>
+            <a class="home-btn btn btn-primary btn-lg" href="{% url 'post_list' %}" role="button">Recent Posts</a>
+            <a class="home-btn btn btn-primary btn-lg" href="{% url 'random_post' %}" role="button">Spin the Wheel (Random)</a>
+        </div>
     </div>
 </div>
 {% endblock %}
