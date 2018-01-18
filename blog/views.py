@@ -53,16 +53,22 @@ class BookDetailView(DetailView):
 class WriterListView(ListView):
     model = Writer
     paginate_by = 20
+    template_name = 'blog/writer_list.html'
     
 class WriterDetailView(DetailView):
     model = Writer
+    paginate_by = 20
+    template_name = 'blog/writer_detail.html'
     
 class TranslatorListView(ListView):
     model = Translator
     paginate_by = 20
+    template_name = 'blog/translator_list.html'
     
 class TranslatorDetailView(DetailView):
     model = Translator
+    paginate_by = 20
+    template_name = 'blog/translator_detail.html'
     
 #Contact Form
 def emailView(request):

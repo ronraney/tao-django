@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %} Translators {% endblock %}
+
+{% block content %}
+    {% for translator in object_list %}
+        <div class="container-fluid post">
+            <h1><a href="{% url 'translator_detail' translator.pk %}">{{ translator.first_name }} {{ translator.last_name }}</a></h1>
+            <div class="publish">
+                <p>Year of birth: {{ translator.year_of_birth }}</p>
+            </div><hr>          
+        </div>
+    {% endfor %}
+{% endblock %}

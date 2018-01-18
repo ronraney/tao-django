@@ -26,6 +26,16 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
                     </li>
+                    <li class="ml-3 nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Library
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="{% url 'book_list' %}">Books</a>
+                            <a class="dropdown-item" href="{% url 'writer_list' %}">Authors</a>
+                            <a class="dropdown-item" href="{% url 'translator_list' %}">Translators</a>
+                        </div>
+                    </li>
                     <li class="ml-3 nav-item">
                         <a class="nav-link disabled" href="{% url 'tao' %}">Tao</a>
                     </li>

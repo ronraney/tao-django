@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}{{ translator.last_name }}{% endblock %}
+
+{% block content %}
+
+
+		<div class="card">
+          <div class="card-header">
+            <span>Translator: {{ translator.first_name }} {{ translator.last_name }}</span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ translator.year_of_birth }} - {{ translator.year_of_death }}</h5>
+            <p class="card-text"> {{ translator.summary }} </p>
+            <a href="{% url 'translator_list' %}" class="btn btn-primary">Back to All Translators</a>
+          </div>
+        </div>
+        <p class="mt-5 mx-auto">
+            <a class="btn btn-primary btn-lg" href="{% url 'random_post' %}" role="button">Keep Cultivating</a>
+        </p>
+        
+{% endblock %}
