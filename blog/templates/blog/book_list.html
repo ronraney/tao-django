@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %} Books {% endblock %}
+
+{% block content %}
+    {% for book in object_list %}
+        <div class="container-fluid post">
+            <h1><a href="{% url 'book_detail' book.pk %}">{{ book.title }}</a></h1>
+            <div class="publish">
+                <p>First published in: {{ book.first_edition }}</p>
+            </div><hr>          
+        </div>
+    {% endfor %}
+{% endblock %}

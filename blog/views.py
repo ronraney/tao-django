@@ -12,6 +12,7 @@ from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse, HttpResponseRedirect
 from django.utils import timezone
 from .models import Book, Writer, Translator, Post
+from django.views import generic
 import random
 from django.template import Context, Template
 
@@ -43,9 +44,11 @@ class PostDetailView(DetailView):
 class BookListView(ListView):
     model = Book
     paginate_by = 20
+    template_name = 'blog/book_list.html'
     
 class BookDetailView(DetailView):
     model = Book
+    template_name = 'blog/book_detail.html'
     
 class WriterListView(ListView):
     model = Writer

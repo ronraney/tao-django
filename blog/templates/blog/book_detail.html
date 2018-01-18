@@ -1,0 +1,29 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}{{ book.title }}{% endblock %}
+
+{% block content %}
+
+
+		<div class="card">
+          <div class="card-header">
+            Author: {{ book.author }}
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ book.title }}</h5>
+            <ul class="card-text">
+                <li>First publication: {{ book.first_edition }} </li>
+                <li>Translation by: {% for translator in book.translators.all %} {{ book.translator }} {% endfor %} </li>
+                <li>Book URL: <a href="{{ book.book_url }}" target="_blank"> {{ book.book.url }}</a></li>
+                <li>Translator note: {{ book.translator_note}} </li>
+                <li>Summary: {{ book.summary }} </li>
+            </ul>
+            <a href="{% url 'book_list' %}" class="btn btn-primary">Back to All Books</a>
+          </div>
+        </div>
+        <p class="mt-5 mx-auto">
+            <a class="btn btn-primary btn-lg" href="{% url 'random_post' %}" role="button">Keep Cultivating</a>
+        </p>
+        
+{% endblock %}
+

@@ -17,7 +17,7 @@
 						<p>{{ post.verse|safe }}</p>
 						<footer class="blockquote-footer">
 							{% for author in post.source_authors.all %}{{ author.first_name }} {{ author.last_name }}{% endfor %}
-							<a href=""><cite title="Source Title">{{ post.source }}</cite></a> 
+							<a href="{% url 'book_detail' pk=post.source.book_id %}"><cite title="Source Title">{{ post.source }}</cite></a> 
 						</footer>
 						</blockquote>
 					</div>
