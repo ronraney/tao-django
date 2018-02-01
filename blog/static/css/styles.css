@@ -39,7 +39,12 @@ textarea, input {
 .jumbotron {
 	max-width: 95%;
 	margin-right: 5%;
-    background: #ddd;
+    background: url('../img/helix-nebula.jpg') no-repeat #eee;
+    color: white;
+}
+.jumbotron::after {
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
 }
 span.color-change {
     -webkit-animation: color 20s infinite; /* Chrome, Safari, Opera */
@@ -123,7 +128,12 @@ a:link, a:hover, a:visited, a:active {
 }
 
 /***Navbar***/
-
+.navbar {
+    background: #000;
+}
+.nav-item a {
+    color: #868e96;
+}
 .navbar-dark .navbar-nav .nav-link {
     color: rgba(255,255,255,0.5);
 }
