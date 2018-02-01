@@ -10,7 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <!--External CSS-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">           
-        <link href="https://fonts.googleapis.com/css?family=Spectral+SC" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light|Spectral+SC" rel="stylesheet"> 
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     </head>
     <body>
@@ -18,7 +18,7 @@
         <div class="page-header">
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <a href="{% url 'index' %}"><img id="logo" src="{% static 'img/logo.png' %}" alt="logo"/></a>
-                <a class="navbar-brand" href="{% url 'index' %}">Tao Recovery</a>
+                <a class="navbar-brand" href="{% url 'index' %}"><span class="shadows">Tao</span> Recovery</a>
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
@@ -26,6 +26,16 @@
                   <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
                         <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    
+                    <li class="ml-3 nav-item">
+                        <a class="nav-link disabled" href="{% url 'tao' %}">Tao</a>
+                    </li>
+                    <li class="ml-3 nav-item">
+                        <a class="nav-link disabled" href="{% url 'recovery' %}">Recovery</a>
+                    </li>
+                    <li class="ml-3 nav-item">
+                        <a class="nav-link disabled" href="{% url 'taorecovery' %}">Tao/Recovery</a>
                     </li>
                     <li class="ml-3 nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -36,15 +46,6 @@
                             <a class="dropdown-item" href="{% url 'writer_list' %}">Authors</a>
                             <a class="dropdown-item" href="{% url 'translator_list' %}">Translators</a>
                         </div>
-                    </li>
-                    <li class="ml-3 nav-item">
-                        <a class="nav-link disabled" href="{% url 'tao' %}">Tao</a>
-                    </li>
-                    <li class="ml-3 nav-item">
-                        <a class="nav-link disabled" href="{% url 'recovery' %}">Recovery</a>
-                    </li>
-                    <li class="ml-3 nav-item">
-                        <a class="nav-link disabled" href="{% url 'taorecovery' %}">Tao&#38;Recovery</a>
                     </li>
                     <li class="ml-3 nav-item">
                         <a class="nav-link disabled" href="{% url 'resources' %}">Resources</a>

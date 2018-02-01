@@ -26,21 +26,57 @@ textarea, input {
 	background-color: red;
 }
 #logo {
-	-webkit-animation: color 20s infinite; /* Chrome, Safari, Opera */
-    animation: color 20s infinite;
+	-webkit-animation: b-color 20s infinite; /* Chrome, Safari, Opera */
+    animation: b-color 20s infinite;
 }
 /*Home*/
 
 .sub-lead {
 	margin: 20px auto;
+    font-size: 1.5em;
 }
 
 .jumbotron {
 	max-width: 95%;
 	margin-right: 5%;
+    background: #ddd;
+}
+span.color-change {
+    -webkit-animation: color 20s infinite; /* Chrome, Safari, Opera */
+    animation: color 20s infinite;
+}
+/*Fonts*/
+.spectral {
+    font-family: 'Spectral SC', serif;
+}
+.shadows {
+    font-family: 'Shadows Into Light', cursive;
 }
 /* Chrome, Safari, Opera */
 @-webkit-keyframes color {
+    0%   {color: red;}
+    14%  {color: orange;}
+    28%  {color: yellow;}
+    42%  {color: green;}
+    56%  {color: blue;}
+    70%  {color: indigo;}
+    85%  {color: violet;}
+    100% {color: red;}
+}
+
+/* Standard syntax */
+@keyframes color {
+    0%   {color: red;}
+    14%  {color: orange;}
+    28%  {color: yellow;}
+    42%  {color: green;}
+    56%  {color: blue;}
+    70%  {color: indigo;}
+    85%  {color: violet;}
+    100% {color: red;}
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes b-color {
     0%   {background-color: red;}
     14%  {background-color: orange;}
     28%  {background-color: yellow;}
@@ -52,7 +88,7 @@ textarea, input {
 }
 
 /* Standard syntax */
-@keyframes color {
+@keyframes b-color {
     0%   {background-color: red;}
     14%  {background-color: orange;}
     28%  {background-color: yellow;}
@@ -62,6 +98,7 @@ textarea, input {
     85%  {background-color: violet;}
     100% {background-color: red;}
 }
+
 /*Post Detail*/
 .card {
 	margin-top: 25px;
@@ -70,6 +107,9 @@ textarea, input {
 .card-image {
 	max-width: 128px;
 	height: auto;
+}
+#FrameOne, #FrameTwo {
+    min-height: 350px;
 }
 
 /* IE 6 */
@@ -85,7 +125,7 @@ a:link, a:hover, a:visited, a:active {
 /***Navbar***/
 
 .navbar-dark .navbar-nav .nav-link {
-    color: rgba(255,255,255,0.8);
+    color: rgba(255,255,255,0.5);
 }
 
 .navbar-dark .navbar-nav .nav-link.disabled {
@@ -99,7 +139,7 @@ a:link, a:hover, a:visited, a:active {
 }
 .navbar-brand, .navbar-nav > li > a {
     text-shadow: none;
-    font-size: 1.2em;
+    font-size: 1.1em;
 }
 .navbar-brand {
     font-size: 1.5em;
