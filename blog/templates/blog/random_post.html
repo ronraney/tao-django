@@ -4,27 +4,43 @@
 
 {% block content %}
 
-        <div class="container-fluid post">            
-            <h1>{{ post.title }}</h1>
-            <div class="ml-2 publish">
-                <p><span class="font-weight-bold">Posted by:</span> <a href="">{{ post.author }}</a></p>
-                <p><span class="font-weight-bold">Published on:</span> {{ post.published_date }}</p>
+
+		<div class="card FrameOne">
+			<div class="card-header">
+				{{ post.verse_title }}
+			</div>
+			<div class="card-body">
+				<div class="media">
+					<img class="card-image mr-3" src="{{ post.thumbnail.url }}" alt="Generic placeholder image">
+					<div class="media-body">
+						<blockquote class="blockquote mb-0">
+						<p>{{ post.verse|safe }}</p>
+						<footer class="blockquote-footer">
+							{% for author in post.source_authors.all %}{{ author.first_name }} {{ author.last_name }}{% endfor %}
+							<a href="{% url 'book_detail' pk=post.source.book_id %}"><cite title="Source Title">{{ post.source }}</cite></a> 
+						</footer>
+						</blockquote>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card FrameTwo">
+            <div class="card-header">
+                {{ post.commentary_title }}               
             </div>
-            <div class="ml-2 post_verse">
-                <h2>{{ post.verse_title }}</h2>
-                <p><span class="font-weight-bold">Source:</span> <a href="">{{ post.source }}</a></p>
-                <p>{{ post.verse|safe }}</p><hr>
-                {% for author in post.source_authors.all %}<p><span class="font-weight-bold">Author:</span> <a href="">{{ author.first_name }} {{ author.last_name }}</a></p>{% endfor %}
-                {% for translator in post.source_translators.all %}<p><span class="font-weight-bold">Translation:</span> <a href="">{{ translator.first_name }} {{ translator.last_name }}</a></p>{% endfor %}
-            </div>
-            <div class="ml-2 post_commentary">
-                <h2>{{ post.commentary_title }}</h2>
-                <p>{{ post.commentary|safe }}</p>
-            </div>
+			
+			<div class="card-body">
+				<blockquote class="blockquote mb-0">
+					<p>{{ post.commentary|safe }}</p>
+				</blockquote>
+			</div>
         </div>
+        <button role="button" class="btn btn-info btn-lg" onclick="toggleDivs()">More on this verse</button>
         <p class="mt-5 mx-auto">
-            <a class="btn btn-primary btn-lg" href="{% url 'random_post' %}" role="button">Keep Cultivating</a>
+            <a class="btn btn-primary btn-lg" href="{% url 'random_post' %}" role="button">Give me another, please</a>
         </p>
+		
 
 {% endblock %}
+
 
