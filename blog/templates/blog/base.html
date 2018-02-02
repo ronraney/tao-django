@@ -11,6 +11,7 @@
         <!--External CSS-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">           
         <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light|Spectral+SC" rel="stylesheet"> 
+        <link rel="stylesheet" href="{% static 'css/fontawesome/css/fontawesome-all.min.css' %}">
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     </head>
     <body>
@@ -18,7 +19,7 @@
         <div class="page-header">
             <nav class="navbar navbar-expand-lg">
                 <a href="{% url 'index' %}"><img id="logo" src="{% static 'img/logo.png' %}" alt="logo"/></a>
-                <a class="navbar-brand" href="{% url 'index' %}"><span class="shadows">Tao</span> Recovery</a>
+                <a class="navbar-brand" href="{% url 'index' %}"><span class="text-success shadows">Tao</span> Recovery</a>
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
@@ -71,8 +72,18 @@
         </div>
 		</main>
         <footer>
-            <div id="footer" class="bg-dark">
-                <p>Interested in contributing content to this website? <a href="{% url 'contact' %}">Contact Me</a><p>
+            <div id="footer" class="row pt-3">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <p>Interested in contributing content to this website?</p>
+                    <a class="mb-3 btn btn-outline-success" href="{% url 'contact' %}">Contact Me</a>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <p class="mb-0">Find me out there on the Twitter</p>
+                    <div class="text-center mb-2 fa-2x">
+                        <a class="social-icon" href="" target="blank"><i class="fab fa-twitter"></i></a>
+                        <a class="social-icon" href="" target="blank"><i class="fab fa-twitter-square"></i></a>
+                    </div>
+                </div>
             </div>
         </footer>
         <!--External JavaScript-->

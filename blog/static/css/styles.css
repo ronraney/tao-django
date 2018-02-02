@@ -4,17 +4,6 @@ html {
     min-width: 395px;
 }
 
-#footer {
-	position:fixed;
-    left:0px;
-    bottom:0px;
-    height:2.1em;
-    width:100%;
-    color: #fff;
-    text-align: center;
-    margin: 5px auto;
-    font-size: 1.2em;
-}
 .content {
     margin: 2em 1em 5em 1em;
 }
@@ -49,6 +38,21 @@ textarea, input {
 span.color-change {
     -webkit-animation: color 20s infinite; /* Chrome, Safari, Opera */
     animation: color 20s infinite;
+}
+/*Footer*/
+.social-icon {
+
+}
+#footer {
+	position:fixed;
+    left:0px;
+    bottom:0px;
+    width:100%;
+    color: #fff;
+    text-align: center;
+    margin: 5px auto;
+    font-size: 1.2em;
+    background: #000;
 }
 /*Fonts*/
 .spectral {
@@ -176,7 +180,7 @@ a:link, a:hover, a:visited, a:active {
 		color: #fff;
 		text-align: center;
 		margin: 3px;
-		font-size: .6em;
+		font-size: .8em;
 	}
 
 }
@@ -188,5 +192,5 @@ a:link, a:hover, a:visited, a:active {
 @media (max-width: 1199.99px) {  }
 
 /*Extra large devices (large desktops)*/
-// No media query since the extra-large breakpoint has no upper bound on its width
+
 
