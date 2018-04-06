@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %} Tao Recovery {% endblock %}
+
+{% block content %}
+<div class="home-page">
+    <div class="jumbotron">
+        <h1 class="display-4">Is the <span class="color-change">Tao</span> your Higher Power?</h1>
+        <p class="lead">A virtual space for cultivation of the Way</p>
+        <hr class="my-4">
+        <p class="sub-lead">Explore verses of literary wisdom & commentary on recovery</p>
+        <div>
+            <a class="home-btn btn btn-outline-success btn-lg" href="{% url 'post_list' %}" role="button">Recent Posts</a>
+            <a class="home-btn btn btn-outline-primary btn-lg" href="{% url 'random_post' %}" role="button">Spin the Wheel (Random)</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

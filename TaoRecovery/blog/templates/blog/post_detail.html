@@ -1,0 +1,45 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+
+
+		<div class="card" id="FrameOne">
+			<div class="card-header">
+				{{ post.verse_title }}
+			</div>
+			<div class="card-body">
+				<div class="media">
+					<img class="card-image mr-3" src="{{ post.thumbnail.url }}" alt="Generic placeholder image">
+					<div class="media-body">
+						<blockquote class="blockquote mb-0">
+						<p>{{ post.verse|safe }}</p>
+						<footer class="blockquote-footer">
+							{% for author in post.source_authors.all %}{{ author.first_name }} {{ author.last_name }}{% endfor %}
+							<a href="{% url 'book_detail' pk=post.source.book_id %}"><cite title="Source Title">{{ post.source }}</cite></a> 
+						</footer>
+						</blockquote>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="card" id="FrameTwo" style="display:none;">
+            <div class="card-header">
+                {{ post.commentary_title }}               
+            </div>
+			
+			<div class="card-body">
+				<blockquote class="blockquote mb-0">
+					<p>{{ post.commentary|safe }}</p>
+				</blockquote>
+			</div>
+        </div>
+        <button role="button" class="mt-2 btn btn-info btn-lg" onclick="toggleDivs()">More on this verse</button>
+        <p class="mt-2 mx-auto">
+            <a class="btn btn-primary btn-lg" href="{% url 'random_post' %}" role="button">Keep Cultivating</a>
+        </p>
+		
+
+{% endblock %}
+

@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %} Authors {% endblock %}
+
+{% block content %}
+    {% for writer in object_list %}
+        <div class="container-fluid post">
+            <h1><a href="{% url 'writer_detail' writer.pk %}">{{ writer.first_name }} {{ writer.last_name }}</a></h1>
+            <div class="publish">
+                <p>Year of birth: {{ writer.year_of_birth }}</p>
+            </div><hr>          
+        </div>
+    {% endfor %}
+{% endblock %}

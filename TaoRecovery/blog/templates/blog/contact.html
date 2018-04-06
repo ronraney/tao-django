@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %} Contact {% endblock %}
+
+{% block content %}
+<!-- templates/contact.html -->
+<div class="container-fluid-post">
+
+    <h1>Contact Us</h1>
+    <hr>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="form-actions">
+          <button type="submit">Send</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
+
